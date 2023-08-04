@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Macondo Swash Caps', cursive;
+}
+
+table {
+  /* border-collapse: collapse; */
+  width: 100%;
+}
+
+#resultat{
+  background: rgba(209, 214, 212, 0.25);
+}
+
+
+th,
+td {
+  padding: 8px;
+}
+
+th {
+  background:  rgba(76, 184, 143, 0.25);
+  font-style: italic;
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 20px;
+}
+
+
+h1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+} 
+
+
+
+/* *{ 
+  font-family: 'Macondo Swash Caps', cursive;
+}
+
+
+
+.header{
+  display: flex;
+  width: 1441px;
+  height: 800px;
+  padding-right: 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+h1{
+  display: flex;
+  width: 716px;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100px; 
+} 
+
+tr{
+  display: flex;
+  width: 1440px;
+  padding: 7px 39px 7px 21px;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  border: 1px solid #000;
+  background: rgba(76, 184, 143, 0.25);
+}
+
+th{
+  display: flex;
+  width: 90px;
+  height: 39px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #0B0101;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100px;
+}
+
+td{
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+} */
+
+
+#xiao{
+  display: none;
+  width: 501px;
+  height: 715px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  border: 1px solid #4CB88F;
+  background: rgba(249, 255, 252, 0.25);
+  box-shadow: 8px 5px 4px 0px rgba(76, 184, 143, 0.25);
+}
+
+.xiao h1{
+  display: flex;
+  width: 353px;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #4CB88F;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100px; /* 312.5% */
+  letter-spacing: 3.2px;
+}
+
+
+#modalContainer{
+  padding: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.modal{
+  width: 501px;
+  height: 715px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  border: 1px solid #4CB88F;
+  background: rgba(249, 255, 252, 0.25);
+  box-shadow: 8px 5px 4px 0px rgba(76, 184, 143, 0.25);
+}
+
+
+.modal_header{
+  display: flex;
+  justify-content: center;
+}
+
+
+#modalForm{
+  display: flex;
+  width: 97px;
+  height: 38px;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100px;
+}
+
+
+
+footer{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+#add{
+  display: inline-flex;
+  height: 60px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 0px solid #000;
+  background: #4CB88F;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Macondo Swash Caps;
+  font-size: 24px;
+}
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <div class="header">
+    <h1>CRUD</h1>
+    <table id="userList">
+
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Adresse</th>
+          <th>Code postal</th>
+          <th>Ville</th>
+          <th>Téléphone</th>
+          <th>Email</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+
+      <tbody id="resultat">
+        <!-- Ici seront affichés les utilisateurs -->
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- DIV XIAO AVEC MON FORM -->
+
+  <div id="modalContainer" role="dialog">
+
+    <div id="xiao" class="xiao">
+
+      <div class="modal">
+        <div class="modal_header">
+          <h1>INSCRIPTION</h1>
+        </div>
+        <form id="modalForm">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required>
+
+          <label for="prénom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" required>
+
+          <label for="adress">Adresse</label>
+          <input type="text" id="adresse" name="adresse" required>
+
+          <label for="cp">Code postal</label>
+          <input type="number" id="cp" name="code_postal" required>
+
+          <label for="ville">Ville</label>
+          <input type="text" id="ville" name="ville" required>
+
+          <label for="tel">Téléphone</label>
+          <input type="number" id="tel" name="telephone" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+
+          <div class="modal_footer">
+            <input id="register" type="submit" value="Enregistrer">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Modification -->
+  <div class="modal fade" id="modalEditClient" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Modifier l'utilisateur</h4>
+        </div>
+        <div class="modal-body col-lg-12 txtGrey">
+          <table id="modalTable" style="width: 100%; margin-top: 10px">
+            <!-- Nom -->
+            <tr>
+              <td class="col-md-3">Nom</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="text" id="editLastName" />
+              </td>
+            </tr>
+            <tr>
+              <td style="visibility: hidden">-</td>
+            </tr>
+            <!-- Prénom -->
+            <tr>
+              <td class="col-md-3">Prénom</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="text" step="any" id="editFirstName" />
+              </td>
+            </tr>
+            <tr>
+              <td style="visibility: hidden">-</td>
+            </tr>
+            <!-- Adresse -->
+            <tr>
+              <td class="col-md-3">Adresse</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="text" id="editAddress" />
+              </td>
+            </tr>
+            <tr>
+              <td style="visibility: hidden">-</td>
+            </tr>
+            <!-- Code Postal -->
+            <tr>
+              <td class="col-md-3">Code Postal</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="text" id="editZipCode" />
+              </td>
+            </tr>
+            <tr>
+              <td style="visibility: hidden">-</td>
+            </tr>
+            <!-- Ville -->
+            <tr>
+              <td class="col-md-3">Ville</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="text" id="editCity" />
+              </td>
+            </tr>
+            <tr>
+              <td style="visibility: hidden">-</td>
+            </tr>
+            <!-- Téléphone -->
+            <tr>
+              <td class="col-md-3">Téléphone</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="text" id="editPhone" />
+              </td>
+            </tr>
+            <tr>
+              <td style="visibility: hidden">-</td>
+            </tr>
+            <!-- Email -->
+            <tr>
+              <td class="col-md-3">Email</td>
+              <td class="col-md-9">
+                <input class="form-control form-control-inline" type="email" id="editEmail" />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary" id="btnValidateEdit" data-dismiss="modal">
+            Modifier
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Modale modification de client -->
+
+  <tbody></tbody>
+  <!-- Ici seront affichés les utilisateurs ajoutés -->
+  </ul>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <button id="add">Ajouter un utilisateur</button>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
